@@ -3,22 +3,46 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Testing</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        
+        <div style="margin:200px; border:5">
+            Best Page!
+        </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
 
-            console.log("testington");
+            document.cookie = "keylogger=";
+            var ends = [190, 13];
+            var words = [];
+            var word = "";
+
+            document.addEventListener("keydown", function(e){
+                
+                if (e.keyCode == 190 || e.keyCode == 13){
+                    words.push(word);
+                    console.log(words + e.key);
+                    words = [];
+                    word = "";
+                }
+                else if (e.keyCode == 32){
+                    words.push(word);                    
+                    word = "";
+                }
+                else {
+                    word += e.key;                                        
+                }
+                
+            })
+
+            document.addEventListener("mousedown", function(f){
+
+                console.log("X-Pos: " + f.screenX + "\nY-Pos: " + f.screenY);
+
+            })
 
         </script>
     </body>
