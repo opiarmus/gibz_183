@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>Fake Login</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>                    
+               
+        <script>
+            var containerDiv = document.createElement("div");
+            containerDiv.setAttribute('class',"container");
+
+            var form = document.createElement("form"); //
+            form.setAttribute('method',"post");
+            form.setAttribute('action',"submit.php");
+            form.setAttribute('id',"myform");
+
+            var inputUser = document.createElement("input"); //input element, text
+            inputUser.setAttribute('type',"text");
+            inputUser.setAttribute('name',"username");
+            inputUser.setAttribute('placeholder', "username");
+
+            var inputPass = document.createElement("input"); //input element, password
+            inputPass.setAttribute('type',"password");
+            inputPass.setAttribute('name',"password");
+            inputPass.setAttribute('placeholder', "password");
+
+            var buttonSubmit = document.createElement("button"); //button element, Submit button
+            buttonSubmit.setAttribute('type',"submit");
+            buttonSubmit.setAttribute('value',"Submit");
+
+            form.appendChild(containerDiv);
+            containerDiv.appendChild(inputUser);
+            containerDiv.appendChild(inputPass);
+            containerDiv.appendChild(buttonSubmit);
+            
+            document.getElementsByTagName('body')[0].appendChild(form);
+
+            form.addEventListener("submit", function(e){
+                e.preventDefault();
+                e.stopPropagation();
+
+                if(e.target && e.target.id == 'myform'){
+
+                }
+            })
+            
+        </script>
+
+    </body>        
+</html>
