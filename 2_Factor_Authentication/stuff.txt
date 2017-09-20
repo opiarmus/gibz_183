@@ -1,0 +1,32 @@
+[HttpPost]
+        public ActionResult Login()
+        {
+            var username = Request["email"];
+            var password = Request["password"];
+
+            if (username == "test" && password == "test")
+            {
+                var secret = "121212";
+
+                var mode = "SMS_EMAIL";
+
+                if (mode == "SMS_EMAIL")
+                {
+                    var request = (HttpWebRequest)WebRequest.Create("https://rest.nexmo.com/sms/json");
+
+                    var postData = "api_key=e...";
+                    postData += "";
+                }
+
+
+
+                var result = SMS.Send(new SMS.SMSRequest
+                {
+                    from = "Nexmo Ver.",
+                    to = "+41793939162",
+                    text = secret
+                });
+
+            }
+
+
