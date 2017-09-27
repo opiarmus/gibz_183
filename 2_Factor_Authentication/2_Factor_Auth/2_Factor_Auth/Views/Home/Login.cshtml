@@ -4,9 +4,26 @@
 }
 
 <h2>Login</h2>
+
 <form id="LoginForm" method="post">
     <input type="email" name="email" placeholder="Email..." />
     <input type="password" name="password" placeholder="Password..." />
     <input type="text" name="code" placeholder="Code..." />
     <input type="submit" value="Login" />
 </form>
+
+<!--Google sign-in button-->
+<div class="g-signin2 pull-right" data-onsuccess="onSignIn"></div>
+
+<script>
+
+    // After the login with google was successful some user information ist written in the console of the browser
+    function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        var profile = googleUser.getBasicProfile();
+        console.log(profile.getId(), profile.getName(), profile.getImageUrl());
+    }
+
+</script>
+
+

@@ -7,6 +7,7 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="google-signin-client_id" content="993337614778-m1jvtg410a9ci2n9pvm7sfnhvk7tmatt.apps.googleusercontent.com">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,13 +29,15 @@
 
     <div class="container body-content">
         @RenderBody()
+        <div style="clear: both"></div>
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - 2 Factor Authentication Testing</p>
+            <p>&copy; @DateTime.Now.Year - Two Factor Authentication Testing</p>
         </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
